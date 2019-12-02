@@ -14,7 +14,7 @@
 (module-masses)
 
 (defn fuel [mass]
-  (- (unchecked-divide-int mass 3) 2))
+  (- (quot mass 3) 2))
 
 
 (defn day01-part01 []
@@ -31,7 +31,7 @@
   (is (= 33583 (fuel 100756))))
 
 (defn total-fuel [mass]
-  (- (apply + (take-while pos?  (iterate fuel mass)))
+  (- (apply + (take-while pos? (iterate fuel mass)))
      mass))
 
 #_(take-while pos?  (iterate fuel 1969))
@@ -39,7 +39,7 @@
 (deftest examples2
   (is (= 2 (total-fuel 14)))
   (is (= 966 (total-fuel 1969)))
-  (is ( = 50346 (total-fuel 100756))))
+  (is (= 50346 (total-fuel 100756))))
 
 (defn day01-part02 []
   (->> (module-masses)
