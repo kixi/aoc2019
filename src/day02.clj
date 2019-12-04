@@ -2,12 +2,10 @@
   (:require [clojure.java.io :as io]
             [clojure.test :refer [deftest is]]))
 
-
 (defn read-program []
   (let [p-str (slurp (io/resource "day02k.txt"))]
     (read-string (str "[" p-str "]"))))
 
-(def def-op nil)
 (defmulti do-op (fn [op _ _] op))
 
 (defmethod do-op 1 [_ arg0 arg1]

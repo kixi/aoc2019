@@ -1,8 +1,4 @@
-(ns day04
-  (:require [clojure.java.io :as io]
-            [clojure.test :refer [deftest is]]
-            [clojure.string :as str]
-            [clojure.set :as set]))
+(ns day04)
 
 (defn ordered? [pwd]
   (->>
@@ -49,5 +45,4 @@
        count))
 
 (run-part2)
-;; 1131
 
