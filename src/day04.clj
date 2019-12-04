@@ -6,8 +6,6 @@
    (map int)
    (apply <=)))
 
-(ordered? "1233")
-
 (defn repeating-digits? [pwd]
   (->>
    pwd
@@ -15,7 +13,6 @@
    vals
    (filter #(>= % 2))
    seq))
-
 
 (def valid-password? #(and (ordered? %) (repeating-digits? %)))
 
@@ -26,7 +23,6 @@
        count))
 
 (run-part1)
-
 
 (defn double-digits? [pwd]
   (->>
