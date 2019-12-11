@@ -96,12 +96,6 @@
        :position (get prog (+ 1 ip arg-count))
        :relative (+ memory (get prog (+ 1 ip arg-count))))]))
 
-(defn print-prog [prog]
-  (->>
-   (into [] prog)
-   (sort (fn [[idx v] [idx2 v2]] (compare idx idx2)))
-   (map (fn [[idx v]] v))))
-
 (defn exec-prog-step [{:keys [ip prog memory ctx]}]
   (let [op (get prog ip)
         [args store] (get-args op prog ip memory)
